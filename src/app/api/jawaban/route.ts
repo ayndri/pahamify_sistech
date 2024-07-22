@@ -5,7 +5,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-    mockJawaban = await req.json();
+    mockJawaban = {...mockJawaban, ...await req.json()};
     return NextResponse.json(mockJawaban);
 }
 
