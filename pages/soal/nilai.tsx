@@ -13,13 +13,13 @@ export default function NilaiPage() {
 
     useEffect(() => {
         const getJawaban = async () => {
-            const response = await fetch(`http://localhost:3000/api/jawaban`, {
+            const response = await fetch(`/api/jawaban`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                 },
             });
-            const res_ = await fetch(`http://localhost:3000/api/bank-soal`, {
+            const res_ = await fetch(`/api/bank-soal`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

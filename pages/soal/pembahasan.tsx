@@ -27,13 +27,13 @@ export default function PembahasanPage() {
 
     useEffect(() => {
         const getQuestions = async () => {
-            const res = await fetch('http://localhost:3000/api/bank-soal')
+            const res = await fetch('/api/bank-soal')
             const data = await res.json();
             console.log(data.soal);
 
             setQuestions(data.soal);
 
-            const res_ = await fetch('http://localhost:3000/api/jawaban')
+            const res_ = await fetch('/api/jawaban')
             const data_ = await res_.json();
 
             setJawaban(data_.jawaban.map((j: number, index: number) => {

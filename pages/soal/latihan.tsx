@@ -1,14 +1,9 @@
-import NomorSoal, {Jawaban, Mode} from "../../components/NomorSoal";
+import NomorSoal, {Mode} from "../../components/NomorSoal";
 import Soal from "../../components/Soal";
 import Navbar from "../../components/Navbar";
 import Slider from "../../components/Slider";
-import Pembahasan from '../../components/Pembahasan';
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-
-interface PembahasanPageProps {
-    flagged: boolean;
-}
 
 export interface Question {
     judul_materi:    string;
@@ -30,7 +25,7 @@ export default function LatihanPage() {
 
     useEffect(() => {
         const getQuestions = async () => {
-            const res = await fetch('http://localhost:3000/api/bank-soal')
+            const res = await fetch('/api/bank-soal')
             const data = await res.json();
             console.log(data.soal);
 
@@ -80,7 +75,7 @@ export default function LatihanPage() {
     }
 
     const nilai = async () => {
-        await fetch("http://localhost:3000/api/jawaban", {
+        await fetch("/api/jawaban", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
