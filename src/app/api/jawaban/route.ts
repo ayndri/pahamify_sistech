@@ -4,7 +4,13 @@ export async function GET() {
     return NextResponse.json(mockJawaban);
 }
 
-const mockJawaban = {
+export async function POST(req: Request) {
+    mockJawaban = await req.json();
+    return NextResponse.json(mockJawaban);
+}
+
+let mockJawaban = {
+    "nama": "Raphael",
     "jawaban": [
         0,
         1,

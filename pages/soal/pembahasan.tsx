@@ -68,8 +68,8 @@ export default function PembahasanPage() {
                     <Soal
                         question={questions[activeQuestion - 1]}
                         flagged={flagged.includes(activeQuestion)}
-                        waktuSisa={0}
                         activeQuestion={activeQuestion}
+                        waktuSisa={""}
                         jawaban={jawaban[activeQuestion - 1]}
                         kodeJawaban={kodeJawaban[activeQuestion - 1]}
                     />

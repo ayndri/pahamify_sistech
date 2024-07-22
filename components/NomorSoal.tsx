@@ -20,9 +20,10 @@ interface NomorSoalProps {
     setSoal: Dispatch<SetStateAction<number>>;
     mode: Mode,
     waktuSisa?: string;
+    gotoNilai?: Function;
 }
 
-export default function NomorSoal({ jawaban, flaggedNum, curSoal, setSoal, mode, waktuSisa }: NomorSoalProps) {
+export default function NomorSoal({ jawaban, flaggedNum, curSoal, setSoal, mode, waktuSisa, gotoNilai }: NomorSoalProps) {
     const jawabanBgMapper = (jawaban: Jawaban | number) => {
         if (mode === Mode.Pengerjaan) {
             if (jawaban !== -1) {
@@ -35,7 +36,7 @@ export default function NomorSoal({ jawaban, flaggedNum, curSoal, setSoal, mode,
         switch (jawaban) {
             case Jawaban.Benar: return "bg-green-300"
             case Jawaban.Diisi: return "bg-blue-300"
-            case Jawaban.Kosong: return "bg-gray-400"
+            case Jawaban.Kosong: return "bg-gray-300"
             case Jawaban.Salah: return "bg-red-300"
             default: return "bg-gray-200"
         }
@@ -61,7 +62,11 @@ export default function NomorSoal({ jawaban, flaggedNum, curSoal, setSoal, mode,
             {mode === Mode.Pengerjaan ? <p className="text-sm block px-2 text-gray-600">
                 Total waktu pengerjaan: {waktuSisa}
             </p>: <></>}
-            <button className="p-1/2 mt-4 mb-2 w-full bg-orange-500 rounded-full text-white font-semibold">
+            <button className="p-1/2 mt-4 mb-2 w-full bg-orange-500 rounded-full text-white font-semibold" onClick={() => {
+                if (gotoNilai && mode === Mode.Pengerjaan) {
+                    gotoNilai();
+                }
+            }}>
                 Selesai {mode === Mode.Pembahasan ? "Review" : "Pengerjaan"}
             </button>
         </div>
