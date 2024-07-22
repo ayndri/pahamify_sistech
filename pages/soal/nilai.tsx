@@ -85,7 +85,10 @@ export default function NilaiPage() {
                         <span className="font-semibold">Pembahasan Soal</span>
                         <div className="cursor-pointer py-4 px-6 grid grid-cols-5 gap-3 rounded-2xl bg-blue-500" onClick={kePembahasan}>
                             {jawaban.map((j, index) => (
-                                <span className={"cursor-pointer font-semibold p-2 border border-slate-400 aspect-square flex justify-center items-center rounded-full " + jawabanBgMapper(j)}>{index + 1}</span>
+                                <span key={index} className={"cursor-pointer font-semibold p-2 border border-slate-400 aspect-square flex justify-center items-center rounded-full " + jawabanBgMapper(j) } >{index + 1}
+                                    {flagged.includes(index+1) ? <div className="absolute w-2 h-2 top-0 right-0 rounded-full bg-yellow-500"></div> : <></>}
+
+                                </span>
                             ))}
                         </div>
                     </div>
