@@ -1,6 +1,6 @@
 import {BiFlag, BiSolidFlag, BiTimer} from "react-icons/bi";
 import {AiFillFlag, AiOutlineFlag} from "react-icons/ai";
-import {Question} from "../pages/soal/pembahasan";
+import {Question} from "../../../pages/soal/pembahasan";
 import {Dispatch, SetStateAction, useEffect} from "react";
 import {Jawaban} from "./NomorSoal";
 

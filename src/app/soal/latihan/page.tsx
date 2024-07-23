@@ -1,7 +1,9 @@
-import NomorSoal, {Mode} from "../../components/NomorSoal";
-import Soal from "../../components/Soal";
-import Navbar from "../../components/Navbar";
-import Slider from "../../components/Slider";
+"use client";
+
+import NomorSoal, {Mode} from "@/app/components/NomorSoal";
+import Soal from "@/app/components/Soal";
+import Navbar from "@/app/components/Navbar";
+import Slider from "@/app/components/Slider";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
