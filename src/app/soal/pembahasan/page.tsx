@@ -1,8 +1,10 @@
-import NomorSoal, {Jawaban, Mode} from "../../components/NomorSoal";
-import Soal from "../../components/Soal";
-import Navbar from "../../components/Navbar";
-import Slider from "../../components/Slider";
-import Pembahasan from '../../components/Pembahasan';
+"use client";
+
+import NomorSoal, {Jawaban, Mode} from "@/app/components/NomorSoal";
+import Soal from "@/app/components/Soal";
+import Navbar from "@/app/components/Navbar";
+import Slider from "@/app/components/Slider";
+import Pembahasan from '@/app/components/Pembahasan';
 import {useEffect, useState} from "react";
 
 interface PembahasanPageProps {
@@ -54,29 +56,29 @@ export default function PembahasanPage() {
 
     return (
         (questions.length !== 0 && jawaban.length !== 0) ?
-        <main>
-            <Navbar />
-            <div className="flex flex-col items-center p-4 md:flex-row md:items-start gap-8 md:justify-center">
-                <NomorSoal
-                    jawaban={jawaban}
-                    flaggedNum={flagged}
-                    curSoal={activeQuestion}
-                    setSoal={setActiveQuestion}
-                    mode={Mode.Pembahasan}
-                />
-                <div className="flex flex-col gap-4">
-                    <Soal
-                        question={questions[activeQuestion - 1]}
-                        flagged={flagged.includes(activeQuestion)}
-                        activeQuestion={activeQuestion}
-                        waktuSisa={""}
-                        jawaban={jawaban[activeQuestion - 1]}
-                        kodeJawaban={kodeJawaban[activeQuestion - 1]}
+            <main>
+                <Navbar />
+                <div className="flex flex-col items-center p-4 md:flex-row md:items-start gap-8 md:justify-center">
+                    <NomorSoal
+                        jawaban={jawaban}
+                        flaggedNum={flagged}
+                        curSoal={activeQuestion}
+                        setSoal={setActiveQuestion}
+                        mode={Mode.Pembahasan}
                     />
-                    <Slider curSoal={activeQuestion} setSoal={setActiveQuestion} soalLength={questions.length}/>
-                    <Pembahasan pembahasan={questions[activeQuestion - 1].pembahasan} />
+                    <div className="flex flex-col gap-4">
+                        <Soal
+                            question={questions[activeQuestion - 1]}
+                            flagged={flagged.includes(activeQuestion)}
+                            activeQuestion={activeQuestion}
+                            waktuSisa={""}
+                            jawaban={jawaban[activeQuestion - 1]}
+                            kodeJawaban={kodeJawaban[activeQuestion - 1]}
+                        />
+                        <Slider curSoal={activeQuestion} setSoal={setActiveQuestion} soalLength={questions.length}/>
+                        <Pembahasan pembahasan={questions[activeQuestion - 1].pembahasan} />
+                    </div>
                 </div>
-            </div>
-        </main> : <></>
+            </main> : <></>
     )
 }
