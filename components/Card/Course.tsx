@@ -9,7 +9,7 @@ type CourseProps = {
 
 function Course({ img, title, onClick }: CourseProps) {
     return (
-        <div onClick={onClick}>
+        <div className="cardCourse" onClick={onClick}>
             <Image src={img} width={220} height={183} alt={title} />
             <span>{title}</span>
         </div>

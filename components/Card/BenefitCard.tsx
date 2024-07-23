@@ -13,7 +13,7 @@ function BenefitCard({ img, title, description }: BenefitCardProps) {
             <div>
                 <Image src={img} width={80} height={80} alt="title" />
             </div>
-            <div>
+            <div className="benefitDesc">
                 <span>{title}</span>
                 <p>{description}</p>
             </div>

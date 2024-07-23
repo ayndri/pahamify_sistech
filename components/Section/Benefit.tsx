@@ -34,10 +34,10 @@ function Benefit({ title }: BenefitProps) {
             <div>
                 <h2>{title}</h2>
             </div>
-            <div>
+            <div className="benefitCol">
                 {
                     chooseUs.map((item: any, index: any) => (
-                        <div key={index}>
+                        <div key={index} className="benefitRow">
                             <BenefitCard img={item.image} title={item.title} description={item.description} />
                         </div>
                     ))

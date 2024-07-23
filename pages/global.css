@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     margin: 0;
     @apply font-poppins bg-primary;
@@ -65,6 +69,24 @@ a {
     gap: 10px;
 }
 
+p {
+    line-height: 1.8;
+}
+
+.cardCourse span {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
 .hero {
     padding: 60px 90px;
     display: grid;
@@ -127,6 +149,8 @@ a {
     text-align: center;
     color: #3B73C5;
     margin-bottom: 0;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 .course p {
@@ -149,4 +173,28 @@ a {
 .benefit h2 {
     color: #3B73C5;
     text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.benefitCol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    margin-top: 90px;
+}
+
+.benefitRow {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.benefitDesc span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1D3962;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: grid;
+    width: 100%;
 }
